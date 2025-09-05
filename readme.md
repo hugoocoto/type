@@ -1,6 +1,3 @@
 # Type
 
-*Typing test*
-
-## About
-TUI typing test. Similar to monkeytype carrot + master + english 10k
+TUI typing practice tool. Similar to monkeytype carrot + master + english 10k. It doesn't report wpm yet
