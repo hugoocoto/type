@@ -1,6 +1,6 @@
 # Type
 
 TUI typing practice tool. Similar to monkeytype tape letter + master + english
-10k. It doesn't report wpm yet
+10k. 
 
 ![](./image.png)
