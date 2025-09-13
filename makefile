@@ -5,4 +5,4 @@ run: ./bin
 	python -m venv .
 
 install: ./bin
-	pyinstaller --onefile --distpath . main.py
+	pyinstaller --onefile --distpath . main.py -n type
