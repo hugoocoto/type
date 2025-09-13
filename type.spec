@@ -5,7 +5,7 @@ a = Analysis(
     ['main.py'],
     pathex=[],
     binaries=[],
-    datas=[],
+    datas=[('english10k.wordlist', '.')],
     hiddenimports=[],
     hookspath=[],
     hooksconfig={},

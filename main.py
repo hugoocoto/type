@@ -1,6 +1,9 @@
 import curses
 import random
 from collections import deque
+import os
+import signal
+import sys
 import time
 
 stop_at_words = True
@@ -8,6 +11,19 @@ max_words = 30
 stop_at_time = True
 max_time = 30  # seconds
 last_failed_word = None
+
+
+def sigint_handler(sig, frame):
+    sys.exit(0)
+
+
+signal.signal(signal.SIGINT, sigint_handler)
+
+
+def resource_path(filename):
+    if hasattr(sys, "_MEIPASS"):
+        return os.path.join(sys._MEIPASS, filename)
+    return os.path.join(os.path.abspath("."), filename)
 
 
 def load_words(path) -> list:
@@ -22,7 +38,10 @@ def main(stdscr):
     curses.use_default_colors()
 
     words = []
-    words += load_words("./english10k.wordlist")
+    words += load_words(resource_path("./english10k.wordlist"))
+
+    if (words == []):
+        return 1
 
     while (1):
         random.shuffle(words)
